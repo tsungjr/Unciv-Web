@@ -1,0 +1,70 @@
+name: Build Unciv Web
+
+on:
+  push:
+    branches:
+      - web-deploy
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: read
+
+jobs:
+  web-build:
+    name: Build Web JS Artifact
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Restore Gradle build cache
+        uses: actions/cache@v4
+        with:
+          path: .gradle-gh
+          key: ${{ runner.os }}-web-build-gradle-${{ hashFiles('**/*.gradle*', 'gradle.properties', 'settings.gradle.kts', 'gradle/libs.versions.toml', 'buildSrc/**/*.kt', 'buildSrc/**/*.kts') }}
+          restore-keys: |
+            ${{ runner.os }}-web-build-gradle-
+
+      - name: Build web toolchain container
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: .devcontainer/Dockerfile
+          load: true
+          tags: unciv-web-builder:ci
+          cache-from: type=gha,scope=unciv-web-builder
+          cache-to: type=gha,mode=max,scope=unciv-web-builder
+
+      - name: Build JS bundle
+        run: |
+          mkdir -p "${{ github.workspace }}/.gradle-gh"
+          docker run --rm \
+            --user "$(id -u):$(id -g)" \
+            -v "${{ github.workspace }}:/workspace" \
+            -v "${{ github.workspace }}/.gradle-gh:/gradle-home" \
+            -e GRADLE_USER_HOME=/gradle-home \
+            -w /workspace \
+            unciv-web-builder:ci \
+            bash -lc "./gradlew --configuration-cache :web:webBuildJs"
+
+      - name: Show dist output
+        run: |
+          echo "=== dist tree ==="
+          find web/build/dist -maxdepth 2 -type f -printf '%10s  %p\n' | sort -k2 | head -60
+          echo "=== total size ==="
+          du -sh web/build/dist
+
+      - name: Upload web dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: unciv-web-dist
+          path: web/build/dist
+          if-no-files-found: error
+          retention-days: 14
