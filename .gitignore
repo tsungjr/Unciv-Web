@@ -1,4 +1,4 @@
-## Java
+﻿## Java
 
 *.class
 *.war
@@ -162,7 +162,7 @@ android/assets/scenarios/
 lasterror.txt
 GameSettings.json
 ModListCache.json
-fonts/
+/android/assets/fonts/
 maps/
 mods/
 !web/src/main/resources/webtest/mods/
