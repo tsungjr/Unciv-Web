@@ -1,2 +1,10 @@
-*.svg binary
-# These are basically image files.
+﻿* text=auto eol=lf
+*.sh text eol=lf
+gradlew text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.jar binary
+*.png binary
+*.jpg binary
+*.ogg binary
+*.ttf binary
