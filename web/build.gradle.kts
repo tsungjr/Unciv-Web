@@ -9,7 +9,7 @@ plugins {
 val gdxVersion: String by project
 val coroutinesVersion: String by project
 val ktorVersion: String by project
-val gdxTeaVMVersion = "1.5.6"
+val gdxTeaVMVersion = "1.5.4"
 val generatedWebJsTestsDir = layout.buildDirectory.dir("generated/web-jstests/kotlin")
 
 sourceSets {
