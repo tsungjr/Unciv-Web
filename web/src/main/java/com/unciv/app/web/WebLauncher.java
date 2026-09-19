@@ -1,7 +1,7 @@
-package com.unciv.app.web;
+﻿package com.unciv.app.web;
 
-import com.github.xpenatan.gdx.teavm.backends.web.TeaApplication;
-import com.github.xpenatan.gdx.teavm.backends.web.TeaApplicationConfiguration;
+import com.github.xpenatan.gdx.teavm.backends.web.WebApplication;
+import com.github.xpenatan.gdx.teavm.backends.web.WebApplicationConfiguration;
 import com.unciv.logic.files.FileChooser;
 import com.unciv.logic.files.PlatformSaverLoader;
 import com.unciv.logic.files.UncivFiles;
@@ -53,17 +53,17 @@ public class WebLauncher {
             }
         }
 
-        TeaApplicationConfiguration config = new TeaApplicationConfiguration("canvas");
+        WebApplicationConfiguration config = new WebApplicationConfiguration("canvas");
         config.width = 0;
         config.height = 0;
         config.useGL30 = true;
         config.showDownloadLogs = true;
 
         if(jsTestsMode) {
-            new TeaApplication(new WebJsTestsGame(), config);
+            new WebApplication(new WebJsTestsGame(), config);
             return;
         }
-        new TeaApplication(new WebGame(), config);
+        new WebApplication(new WebGame(), config);
     }
 
     private static WebProfile resolveWebProfile() {

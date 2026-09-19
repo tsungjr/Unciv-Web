@@ -3,7 +3,7 @@ package com.unciv.app.web;
 import com.github.xpenatan.gdx.teavm.backends.shared.config.AssetFileHandle;
 import com.github.xpenatan.gdx.teavm.backends.web.config.TeaBuildConfiguration;
 import com.github.xpenatan.gdx.teavm.backends.web.config.TeaBuilder;
-import com.github.xpenatan.gdx.teavm.backends.web.config.plugins.TeaReflectionSupplier;
+import com.github.xpenatan.gdx.teavm.backends.shared.config.plugin.TeaReflectionSupplier;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.FileVisitor;
