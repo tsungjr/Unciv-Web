@@ -9,7 +9,7 @@ plugins {
 val gdxVersion: String by project
 val coroutinesVersion: String by project
 val ktorVersion: String by project
-val gdxTeaVMVersion = "-SNAPSHOT"
+val gdxTeaVMVersion = "1.6.2"
 val generatedWebJsTestsDir = layout.buildDirectory.dir("generated/web-jstests/kotlin")
 
 sourceSets {
@@ -50,8 +50,8 @@ dependencies {
     implementation("com.badlogicgames.gdx:gdx:$gdxVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("io.ktor:ktor-client-core:$ktorVersion")
-    implementation("com.github.xpenatan.gdx-teavm:backend-teavm:$gdxTeaVMVersion")
-    implementation("com.github.xpenatan.gdx-teavm:gdx-freetype-teavm:$gdxTeaVMVersion")
+    implementation("com.github.xpenatan.gdx-teavm:backend-web:$gdxTeaVMVersion")
+    implementation("com.github.xpenatan.gdx-teavm:gdx-freetype-web:$gdxTeaVMVersion")
 }
 
 val generateWebJsTestSuite by tasks.registering(GenerateWebJsTestSuiteTask::class) {
