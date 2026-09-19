@@ -51,7 +51,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("io.ktor:ktor-client-core:$ktorVersion")
     implementation("com.github.xpenatan.gdx-teavm:backend-web:$gdxTeaVMVersion")
-    implementation("com.github.xpenatan.gdx-teavm:gdx-freetype-web:$gdxTeaVMVersion")
 }
 
 val generateWebJsTestSuite by tasks.registering(GenerateWebJsTestSuiteTask::class) {
