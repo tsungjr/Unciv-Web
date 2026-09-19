@@ -1,4 +1,4 @@
-name: Build Unciv Web
+﻿name: Build Unciv Web
 
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
             -e GRADLE_USER_HOME=/gradle-home \
             -w /workspace \
             unciv-web-builder:ci \
-            bash -lc "./gradlew --configuration-cache :web:webBuildJs"
+            bash -lc "chmod +x ./gradlew && ./gradlew --configuration-cache :web:webBuildJs"
 
       - name: Show dist output
         run: |
