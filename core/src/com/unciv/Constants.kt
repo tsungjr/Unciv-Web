@@ -8,6 +8,10 @@ object Constants {
 
     const val english = "English"
 
+    /** game.novice.tw custom: default the web build to Traditional Chinese.
+     *  Must match a key in completionPercentages.properties, i.e. file Traditional_Chinese.properties minus underscores. */
+    const val defaultLanguage = "Traditional_Chinese"
+
     const val impassable = "Impassable"
     const val ocean = "Ocean"
 

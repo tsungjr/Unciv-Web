@@ -49,7 +49,7 @@ class GameSettings {
     var smallUnitButton: Boolean = true
     var singleTapMove: Boolean = false
     var longTapMove: Boolean = true
-    var language: String = Constants.english
+    var language: String = Constants.defaultLanguage
     @Transient
     var locale: Locale? = null
     var screenSize: ScreenSize = ScreenSize.Small
