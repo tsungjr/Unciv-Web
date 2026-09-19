@@ -1,4 +1,4 @@
-﻿package com.unciv.logic.map.tile
+package com.unciv.logic.map.tile
 
 import com.unciv.Constants
 import com.unciv.GUI

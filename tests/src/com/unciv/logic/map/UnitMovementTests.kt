@@ -1,4 +1,4 @@
-﻿@file:Suppress("UNUSED_VARIABLE")  // These are tests and the names serve readability
+@file:Suppress("UNUSED_VARIABLE")  // These are tests and the names serve readability
 
 //  Taken from https://github.com/TomGrill/gdx-testing
 package com.unciv.logic.map

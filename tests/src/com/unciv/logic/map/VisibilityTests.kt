@@ -1,4 +1,4 @@
-﻿//  Taken from https://github.com/TomGrill/gdx-testing
+//  Taken from https://github.com/TomGrill/gdx-testing
 package com.unciv.logic.map
 
 import com.unciv.Constants

@@ -1,4 +1,4 @@
-﻿package com.unciv.ui.screens.mainmenuscreen
+package com.unciv.ui.screens.mainmenuscreen
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Application

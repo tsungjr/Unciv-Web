@@ -1,4 +1,4 @@
-﻿package com.unciv.app.web;
+package com.unciv.app.web;
 
 import com.github.xpenatan.gdx.teavm.backends.web.WebApplication;
 import com.github.xpenatan.gdx.teavm.backends.web.WebApplicationConfiguration;
