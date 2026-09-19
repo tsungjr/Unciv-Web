@@ -1,4 +1,4 @@
-import com.unciv.build.GenerateWebJsTestSuiteTask
+﻿import com.unciv.build.GenerateWebJsTestSuiteTask
 import com.unciv.build.WebPostProcessDistTask
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -9,7 +9,7 @@ plugins {
 val gdxVersion: String by project
 val coroutinesVersion: String by project
 val ktorVersion: String by project
-val gdxTeaVMVersion = "1.6.2"
+val gdxTeaVMVersion = "1.5.6"
 val generatedWebJsTestsDir = layout.buildDirectory.dir("generated/web-jstests/kotlin")
 
 sourceSets {
